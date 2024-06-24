@@ -1,0 +1,25 @@
+sudo yum install git maven -y
+sudo dnf install java-1.8.0-amazon-corretto-devel
+sudo dnf install java-17-amazon-corretto-devel
+sudo dnf install java-11-amazon-corretto-devel
+
+
+
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
+sudo dnf upgrade
+# Add required dependencies for the jenkins package
+sudo dnf install fontconfig java-17-openjdk
+sudo dnf install jenkins
+
+
+update-alternatives --config java
+
+sudo systemctl start jenkins
+sudo systemctl status jenkins 
+
+
+
+
